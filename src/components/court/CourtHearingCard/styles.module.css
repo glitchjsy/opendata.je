@@ -1,0 +1,52 @@
+:root {
+    --border-color: #e4e4e4;
+    --stripe-color: #fbe3fa;
+}
+
+[data-theme="dark"] {
+    --border-color: #5e5e5e;
+    --stripe-color: #36204b;
+}
+
+.card {
+    border-radius: 10px;
+    border: 1px solid var(--border-color);
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+}
+
+.title {
+    padding: 5px 20px;
+    background-color: #656ab3;
+    color: white;
+    margin-bottom: 5px;
+}
+
+.defendant {
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.section,
+.sectionAlt {
+    padding: 2px 20px;
+}
+
+.section,
+.sectionAlt {
+    font-size: 14px;
+    margin-bottom: 4px;
+}
+
+.sectionAlt {
+    background-color: var(--stripe-color);
+    border-top: 1px solid var(--border-color);
+}
+
+@media (max-width: 768px) {
+    .title,
+    .section,
+    .sectionAlt {
+        padding: 14px 16px;
+    }
+}

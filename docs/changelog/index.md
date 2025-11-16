@@ -2,6 +2,10 @@
 
 ## 2025
 ---
+### Sunday 16th November
+* Fix FOI Search being case sensitive
+* Add courts search page (in testing currently)
+
 ### Saturday 15th November
 * Add caching to Bus Stops API endpoint
 * Add rate limiting to Bus Stops API endpoint
