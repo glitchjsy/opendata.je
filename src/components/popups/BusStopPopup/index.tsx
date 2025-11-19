@@ -18,7 +18,6 @@ export default function BusStopPopup({ location }) {
                 setError(true);
                 return;
             }
-
             const data = await response.json();
             setDepartures(data?.results?.departures || []);
         } catch (e: any) {
@@ -35,8 +34,7 @@ export default function BusStopPopup({ location }) {
     }
 
     function formatTime(eta: string) {
-        const date = new Date(eta);
-        return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
+        return new Date(eta).toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
     }
 
     return (
