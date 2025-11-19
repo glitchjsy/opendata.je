@@ -5,7 +5,7 @@
 ### Wednesday 19th November
 * Added more Bus APIs
 * Added Bus Stop Departures to the [Map](/map)
-* Make [Courts Lists](/tools/courts-lists) page public
+* Make [Courts Lists](/tools/courts-search) page public
 * Add two new parking spaces endpoint docs
 
 ### Sunday 16th November
