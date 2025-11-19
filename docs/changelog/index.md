@@ -87,7 +87,6 @@
 ### Thursday 25th September
 * Changed all API respones to return data from a root `results` array / object
 * Added documentation for the charts endpoints:
-  * [Parking Spaces Over Time](/docs/endpoints/charts/parking-over-time)
   * [Bus Passengers](/docs/endpoints/charts/bus-passengers)
   * [Driving Test Results](/docs/endpoints/charts/driving-test-results)
   * [Monthly Rainfall](/docs/endpoints/charts/monthly-rainfall)
@@ -123,10 +122,10 @@
 * Begin adding support for a graph to track wait times at Customer & Local Services over time
 
 ### Wednesday 4th December
-* Added fixed colours for the [Parking Spaces Over Time](/charts/transport/parking-over-time) chart (previously it would generate random colours on every request)
+* Added fixed colours for the Parking Spaces Over Time chart (previously it would generate random colours on every request)
 
 ### Sunday 1st December
-* Add proper date picker to [Parking Spaces Over Time](/charts/transport/parking-over-time) chart
+* Add proper date picker to /charts/transport/parking-over-time chart
 * Changed eatsafe fetching job to run every 2 days rather than every hour (it cost a fortune in mapbox tokens!)
 * Temporarily disabled coordinate fetching for eatsafe data until mapbox account issues are sorted out
 * Added banner to Map page to state that the map is currently not working due to mapbox account issues
