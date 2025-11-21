@@ -87,6 +87,12 @@ export default function Charts() {
                     href="/charts/other/foi-stats"
                     color="darkorange"
                 />
+                <Card
+                    title="Petition Statistics"
+                    summary="View Parliment petitions statistics"
+                    href="/charts/other/petition-stats"
+                    color="darkorange"
+                />
             </Section>
         </ChartsPageLayout>
     )

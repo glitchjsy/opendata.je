@@ -15,6 +15,10 @@ function Footer() {
                 <div className={styles.title}>
                     <a className={styles.glitch} href="https://glitch.je">Glitch.je</a>
                 </div>
+                <div className={styles.links}>
+                    <a href="/legal/privacy">Privacy Policy</a>
+                    <a href="/legal/terms">Terms of Use</a>
+                </div>
             </div>
         </div>
     );
