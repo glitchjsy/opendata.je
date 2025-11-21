@@ -76,6 +76,11 @@ const items = [
                 type: "link",
                 label: "Freedom of Information Statistics",
                 href: "/charts/other/foi-stats"
+            },
+            {
+                type: "link",
+                label: "Petition Statistics",
+                href: "/charts/other/petition-stats"
             }
         ]
     }

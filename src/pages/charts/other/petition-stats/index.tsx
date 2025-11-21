@@ -21,7 +21,7 @@ interface ChartDisplayProps {
 
 ChartJS.register(BarElement, CategoryScale, LinearScale, Tooltip, Legend, Title, ArcElement, ChartDataLabels);
 
-export default function FoiStatsCharts() {
+export default function PetitionStatsCharts() {
     const [data, setData] = useState<any>({});
     const [state, setState] = useState(ChartState.Loading);
     const [loaded, setLoaded] = useState(false);
@@ -32,7 +32,7 @@ export default function FoiStatsCharts() {
 
     async function loadData() {
         try {
-            const response = await fetch(`${config.apiUrl}/v1/foi-requests/stats`);
+            const response = await fetch(`${config.apiUrl}/v1/charts/petition-stats`);
 
             setData((await response.json()).results);
             setLoaded(true);
@@ -44,45 +44,46 @@ export default function FoiStatsCharts() {
 
     return (
         <ChartsPageLayout
-            title="FOI Stats"
+            title="Petition Stats"
             subCategory="Other"
         >
-            <Heading as="h1">Freedom of Information Statistics</Heading>
+            <Heading as="h1">Petition Statistics</Heading>
             {/* <p>
                 To access this information programmatically, please see the <a href="/docs/endpoints/other/foi-stats">documentation</a>.
             </p> */}
-            <p>
-                To search Freedom of Information requests, please see the <a href="/tools/foi-search">FOI Search Tool</a>.
-            </p>
 
             <div style={{ display: "flex", gap: "10px", flexWrap: "wrap" }}>
-                <Stat name="Total Requests" value={data?.totalRequests} />
-                <Stat name="Distinct Response Authors" value={data?.distinctAuthors} />
+                <Stat name="Open" value={data?.petitionsByState?.open} />
+                <Stat name="Closed" value={data?.petitionsByState?.closed} />
+                <Stat name="Rejected" value={data?.petitionsByState?.rejected} />
+                <Stat name="Debated" value={data?.debatedPetitions} />
+                <Stat name="Ministers Responses" value={data?.petitionsWithResponses} />
             </div>
 
             <div className={styles.pageWidth}>
+                <TotalPetitionsPerYearChart data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
                 <br />
-                <TotalPerYearChart data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
+                <TotalSignaturesByParishChart data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
                 <br />
-                <Top10AuthorsChart data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
+                <TotalResponsesPerYearChart data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
             </div>
         </ChartsPageLayout>
     )
 }
 
-function TotalPerYearChart(props: ChartDisplayProps) {
+function TotalResponsesPerYearChart(props: ChartDisplayProps) {
     const [chartData, setChartData] = useState<any>({});
 
     useEffect(() => {
         if (props.loaded) {
-            const labels = Object.keys(props.data.totalsPerYear);
-            const values = Object.values(props.data.totalsPerYear);
+            const labels = Object.keys(props.data.responsesPerYear);
+            const values = Object.values(props.data.responsesPerYear);
 
             setChartData({
                 labels: labels,
                 datasets: [
                     {
-                        label: "FOI Requests Published",
+                        label: "Year",
                         data: values,
                         backgroundColor: "rgba(54, 162, 235, 1)",
                         borderColor: "rgba(54, 162, 235, 1)",
@@ -96,7 +97,7 @@ function TotalPerYearChart(props: ChartDisplayProps) {
 
     return (
         <ChartWrapper
-            title="Total Requests Published Per Year"
+            title="Total Ministers Responses Per Year"
             state={props.state}
             onRetry={props.onRetry}
         >
@@ -106,14 +107,88 @@ function TotalPerYearChart(props: ChartDisplayProps) {
                     options={{
                         responsive: true,
                         scales: {
-                            y: { beginAtZero: true }
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Number of Responses"
+                                }
+                            }
                         },
                         plugins: {
-                             title: {
+                            title: {
                                 display: true,
-                                text: "Total FOI Requests Published Per Year"
+                                text: "Total Ministers Responses Per Year"
                             },
-                             datalabels: {
+                            datalabels: {
+                                anchor: "end",
+                                align: "top",
+                                color: "black",
+                                font: {
+                                    weight: "bold"
+                                },
+                                formatter: (value: any) => value
+                            }
+                        },
+                        maintainAspectRatio: false
+                    }}
+                    height={300}
+                />
+            </div>
+        </ChartWrapper>
+    )
+}
+
+function TotalPetitionsPerYearChart(props: ChartDisplayProps) {
+    const [chartData, setChartData] = useState<any>({});
+
+    useEffect(() => {
+        if (props.loaded) {
+            const labels = Object.keys(props.data.petitionsPerYear);
+            const values = Object.values(props.data.petitionsPerYear);
+
+            setChartData({
+                labels: labels,
+                datasets: [
+                    {
+                        label: "Year",
+                        data: values,
+                        backgroundColor: "rgba(54, 162, 235, 1)",
+                        borderColor: "rgba(54, 162, 235, 1)",
+                        borderWidth: 1
+                    }
+                ]
+            });
+            props.setState(ChartState.Loaded);
+        }
+    }, [props.loaded]);
+
+    return (
+        <ChartWrapper
+            title="Total Petitions Per Year"
+            state={props.state}
+            onRetry={props.onRetry}
+        >
+            <div className={styles.chartContainer}>
+                <Bar
+                    data={chartData}
+                    options={{
+                        responsive: true,
+                        scales: {
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Number of Petitions"
+                                }
+                            }
+                        },
+                        plugins: {
+                            title: {
+                                display: true,
+                                text: "Total Petitions Per Year"
+                            },
+                            datalabels: {
                                 anchor: "end",
                                 align: "top",
                                 color: "black",
@@ -132,20 +207,19 @@ function TotalPerYearChart(props: ChartDisplayProps) {
     )
 }
 
-
-function Top10AuthorsChart(props: ChartDisplayProps) {
+function TotalSignaturesByParishChart(props: ChartDisplayProps) {
     const [chartData, setChartData] = useState<any>({});
 
     useEffect(() => {
         if (props.loaded) {
-            const labels = Object.keys(props.data.topAuthors);
-            const values = Object.values(props.data.topAuthors);
+            const labels = Object.keys(props.data.signaturesByParish);
+            const values = Object.values(props.data.signaturesByParish);
 
             setChartData({
                 labels: labels,
                 datasets: [
                     {
-                        label: "FOI Requests Published",
+                        label: "Parish",
                         data: values,
                         backgroundColor: "rgba(54, 162, 235, 1)",
                         borderColor: "rgba(54, 162, 235, 1)",
@@ -159,7 +233,7 @@ function Top10AuthorsChart(props: ChartDisplayProps) {
 
     return (
         <ChartWrapper
-            title="Top 10 Authors"
+            title="Total Signatures By Parish"
             state={props.state}
             onRetry={props.onRetry}
         >
@@ -169,12 +243,18 @@ function Top10AuthorsChart(props: ChartDisplayProps) {
                     options={{
                         responsive: true,
                         scales: {
-                            y: { beginAtZero: true }
+                            y: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: "Number of Signatures (all time)"
+                                }
+                            }
                         },
                         plugins: {
                             title: {
                                 display: true,
-                                text: "Top 10 FOI Response Authors"
+                                text: "Total Signatures By Parish (all time)"
                             },
                             datalabels: {
                                 anchor: "end",

@@ -2,6 +2,10 @@
 
 ## 2025
 ---
+### Friday 21st November
+* Added Petition data fetching and API (in development, not public currently)
+* Added [Petition Stats](/charts/other/petition-stats) charts and statistics
+
 ### Wednesday 19th November
 * Added more Bus APIs
 * Added Bus Stop Departures to the [Map](/map)

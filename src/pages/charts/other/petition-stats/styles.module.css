@@ -1,0 +1,21 @@
+.pageWidth {
+    max-width: 100%;
+}
+
+@media screen and (min-width: 768px) {
+    .pageWidth {
+        max-width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .chartContainer {
+        height: 300px;
+        overflow-x: auto;
+        width: 100%;
+    }
+
+    .chartContainer canvas {
+        min-width: 100%;
+    }
+}
