@@ -97,6 +97,11 @@ const config = {
                         ]
                     },
                     {
+                        href: "/downloads",
+                        position: "left",
+                        label: "Downloads"
+                    },
+                    {
                         href: "/about",
                         position: "left",
                         label: "About"

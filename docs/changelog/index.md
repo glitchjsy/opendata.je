@@ -2,6 +2,11 @@
 
 ## 2025
 ---
+## December
+
+## Wed 10th
+* Added [Downloads](/downloads) page and set up [GitHub action](https://github.com/glitchjsy/opendata-downloads) to auto fetch the data daily
+
 ## November
 
 ### Fri 21st 

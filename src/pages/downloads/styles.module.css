@@ -1,0 +1,72 @@
+:root {
+    --dataset-card-bg-color: #f9f9f9;
+    --dataset-card-text-color: black;
+    --dataset-card-border-color: #ddd;
+}
+
+[data-theme="dark"] {
+    --dataset-card-bg-color: #2b2a2a;
+    --dataset-card-text-color: white;
+    --dataset-card-border-color: #4d4c4c;
+}
+
+.container {
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.datasetGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.dataset {
+    border: 1px solid var(--dataset-card-border-color);
+    border-radius: 8px;
+    padding: 1rem 1.5rem;
+    color: var(--dataset-card-text-color);
+    background-color: var(--dataset-card-bg-color);
+    transition: box-shadow 0.2s ease;
+}
+
+.dataset:hover {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.dataset h2 {
+    margin-top: 0;
+    margin-bottom: 0.5rem;
+    font-size: 1.5rem;
+}
+
+.dataset p {
+    margin: 0.25rem 0 0.75rem 0;
+    font-size: 0.95rem;
+}
+
+.dataset ul {
+    list-style: none;
+    padding-left: 0;
+    margin: 0;
+}
+
+.dataset li {
+    padding: 0.25rem 0;
+    font-size: 0.95rem;
+}
+
+.dataset li a {
+    color: #007acc;
+    text-decoration: none;
+}
+
+.dataset li a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+    .datasetGrid {
+        grid-template-columns: 1fr;
+    }
+}
