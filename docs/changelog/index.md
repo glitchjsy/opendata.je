@@ -6,6 +6,7 @@
 
 ## Wed 10th
 * Added [Downloads](/downloads) page and set up [GitHub action](https://github.com/glitchjsy/opendata-downloads) to auto fetch the data daily
+* Implemented user registration
 
 ## November
 
