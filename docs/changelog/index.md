@@ -4,7 +4,11 @@
 ---
 ## December
 
-## Wed 10th
+### Thu 11th
+* Updated some carpark data, namely Payment Methods
+* Added full parking spaces dataset to the [Downloads](/downloads) page
+
+### Wed 10th
 * Added [Downloads](/downloads) page and set up [GitHub action](https://github.com/glitchjsy/opendata-downloads) to auto fetch the data daily
 * Implemented user registration
 

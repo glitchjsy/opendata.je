@@ -77,8 +77,14 @@ export default function Downloads() {
         >
             <div className={clsx("container", styles.container)}>
                 <h1>Downloads</h1>
-                <p>Do you need the full dataset, or would another format work better? Certain datasets are updated daily and can be downloaded in full from this page.</p>
-
+                <p>
+                    Do you need the full dataset, or would another format work better? Certain datasets are updated daily and can be downloaded in full from this page.
+                </p>
+                <p>
+                    If possible, it is a good idea to use the API as this will provide you with access to the most up to date data, however we acknowledge that there are times 
+                    where it is easier to download the full dataset to manipulate the data in a way that is not currently possible via the API.
+                </p>
+                <hr />
                 <p>
                     <strong>Last updated:</strong> {formatDateTime(generatedAt)}
                 </p>

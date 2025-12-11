@@ -52,6 +52,8 @@ export default function VehicleMakeCharts() {
             <Heading as="h1">Vehicle Makes</Heading>
             <p>
                 To access this information programmatically, please see the <a href="/docs/endpoints/vehicles/makes">documentation</a>.
+                <br />
+                To download the full dataset as a CSV or JSON file, please see the <a href="/downloads">Downloads page</a>.
             </p>
 
             <div className={styles.pageWidth}>

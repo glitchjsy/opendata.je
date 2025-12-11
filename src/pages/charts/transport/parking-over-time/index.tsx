@@ -162,6 +162,8 @@ function ParkingChartsContent() {
             </p>
             <p>
                 To access this information programmatically, please see the <a href="/docs/endpoints/carparks/parking-spaces/all-info-for-date">documentation</a>.
+                <br />
+                To download the full dataset as a CSV file, please see the <a href="/downloads">Downloads page</a>.
             </p>
 
             {/* Before 3rd October 2025, there is some spotiness in the data collection due to issues on the backend. This has been resolved. */}
