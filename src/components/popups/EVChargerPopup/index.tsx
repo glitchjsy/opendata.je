@@ -5,14 +5,16 @@ import { FaChargingStation } from "react-icons/fa";
 
 export default function EVChargerPopup({ location }) {
 
-    function getStatusColor(status) {
+    function getStatusInfo(status) {
         switch (status.toLowerCase()) {
             case "available":
-                return "green";
+                return { text: "Available", color: "green" };
             case "charging":
-                return "orange";
+                return { text: "Charging", color: "orange" };
+            case "suspendedev":
+                return { text: "Finished Charging / Blocked", color: "black" };
         }
-        return "red";
+        return { text: "Unknown", color: "gray" };
     }
 
     return (
@@ -24,27 +26,30 @@ export default function EVChargerPopup({ location }) {
             <p>Operator: {location.operatorName}</p>
             <p>{location.isPrivate ? "Private" : "Public"}</p> */}
 
-              <div className={styles.spacesDivider} />
+            <div className={styles.spacesDivider} />
 
-             <div className={styles.connectorsTitle}>Connectors ({location.connectors.length}):</div>
+            <div className={styles.connectorsTitle}>Connectors ({location.connectors.length}):</div>
 
             <div className={styles.connectors}>
-                {location.connectors.map((connector) => (
-                    <div key={connector.id} className={styles.connector}>
-                        <div className={styles.connectorStatusLine} style={{ backgroundColor: getStatusColor(connector.currentStatus.operativeStatus) }} />
-                        <div>
-                            <p className={styles.connectorType}>
-                                <strong>Type:</strong> {connector.type} ({connector.currentType})
-                            </p>
-                            <p className={styles.connectorPower}>
-                                <strong>Max Power:</strong> {connector.maxKw} kW
-                            </p>
-                            <p className={styles.connectorStatus}>
-                                <strong>Status:</strong> {connector.currentStatus.operativeStatus}
-                            </p>
+                {location.connectors.map((connector) => {
+                    const statusInfo = getStatusInfo(connector.currentStatus.operativeStatus);
+                    return (
+                        <div key={connector.id} className={styles.connector}>
+                            <div className={styles.connectorStatusLine} style={{ backgroundColor: statusInfo.color }} />
+                            <div>
+                                <p className={styles.connectorType}>
+                                    <strong>Type:</strong> {connector.type} ({connector.currentType})
+                                </p>
+                                <p className={styles.connectorPower}>
+                                    <strong>Max Power:</strong> {connector.maxKw} kW
+                                </p>
+                                <p className={styles.connectorStatus}>
+                                    <strong>Status:</strong> {statusInfo.text}
+                                </p>
+                            </div>
                         </div>
-                    </div>
-                ))}
+                    )
+                })}
             </div>
         </div>
     );
