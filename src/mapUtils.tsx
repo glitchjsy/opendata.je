@@ -69,7 +69,7 @@ export const mapItems: MapItems = {
         label: "EV chargers",
         icon: (item) => <EVChargerMarker location={item} />,
         popup: (item) => <EVChargerPopup location={item} />,
-        fetchData: () => _fetchData("ev-stations")
+        fetchData: () => _fetchData("ev-chargers")
     }
 }
 

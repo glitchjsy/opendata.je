@@ -96,11 +96,13 @@ Here is an example of using the data to display all recycling centres on a map. 
 
 <ExampleMap item={mapItems.recycling} />
 
-### Sources
-|Source|
-|------|
-|[Recycling centre locations on opendata.gov.je][opendata]|
-|[Parish recycling collection and facilities on gov.je][recyclinggovje]|
+### Sources & Attribution
+|Data|Source|
+|----|------|
+|`name`,`latitude`,`longitude`,`notes`|[Locations of automated external defibrillators on opendata.gov.je][opendata]|
+|`services`,`parish`|[Parish recycling collection and facilities on gov.je][recyclinggovje]|
+
+The data that were accessed from `opendata.gov.je` is licensed under the [Open Government License - Jersey (OGL-J) v1.0](https://www.gov.je/ServiceManual/opendata/Pages/open-government-licence-jersey-ogl-j-v1-0.aspx)
 
 [opendata]: https://opendata.gov.je/dataset/public-facilities-locations/resource/503e1816-eab0-4183-a822-3e25f1960e6e
 [recyclinggovje]: https://www.gov.je/Environment/WasteReduceReuseRecycle/WhyRecycle/pages/parishrecyclingfacilities.aspx

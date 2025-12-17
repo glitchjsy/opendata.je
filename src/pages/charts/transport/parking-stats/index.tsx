@@ -9,6 +9,7 @@ import { Bar, Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, BarElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     dataLastYear: any;
@@ -180,6 +181,11 @@ function CarparkAvailabilityChart({
                     />
                 </div>
             </ChartWrapper>
+
+            <Attribution 
+                            link="/docs/endpoints/carparks/parking-spaces#sources--attribution" 
+                            style={{ marginTop: "30px" }}
+                        />
         </div>
     );
 }

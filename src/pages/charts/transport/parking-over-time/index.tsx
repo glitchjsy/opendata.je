@@ -20,6 +20,7 @@ import DatePicker from "react-datepicker";
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
 import "react-datepicker/dist/react-datepicker.css";
+import { Attribution } from "@site/src/components/Attribution";
 
 ChartJS.register(
     CategoryScale,
@@ -247,6 +248,11 @@ function ParkingChartsContent() {
                     />
                 </div>
             </ChartWrapper>
+
+            <Attribution 
+                link="/docs/endpoints/carparks/parking-spaces/all-info-for-date#sources--attribution" 
+                style={{ marginTop: "30px" }}
+            />
         </>
     )
 }

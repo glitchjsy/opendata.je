@@ -4,6 +4,10 @@
 ---
 ## December
 
+### Wed 17th
+* Added EV charger locations
+* Massively improved sources & attribution across the site
+
 ### Thu 11th
 * Updated some carpark data, namely Payment Methods
 * Added full parking spaces dataset to the [Downloads](/downloads) page

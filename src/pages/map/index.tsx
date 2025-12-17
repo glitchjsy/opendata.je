@@ -141,183 +141,189 @@ export default function MapPage(): JSX.Element {
                             Close ✕
                         </button>
 
-                        <LayerControl
-                            label="Car parks"
-                            isVisible={showCarparks}
-                            toggleVisibility={() => setShowCarparks(!showCarparks)}
-                            subOptions={[
-                                {
-                                    title: "Type",
-                                    options: [
-                                        {
-                                            label: "Long Stay",
-                                            value: "includeLongStayCarparks",
-                                            isChecked: includeLongStayCarparks,
-                                            toggle: () => setIncludeLongStayCarparks(!includeLongStayCarparks),
-                                        },
-                                        {
-                                            label: "Short Stay",
-                                            value: "includeShortStayCarparks",
-                                            isChecked: includeShortStayCarparks,
-                                            toggle: () => setIncludeShortStayCarparks(!includeShortStayCarparks),
-                                        },
-                                        {
-                                            label: "Unknown",
-                                            value: "includeUnknownCarparks",
-                                            isChecked: includeUnknownCarparks,
-                                            toggle: () => setIncludeUnknownCarparks(!includeUnknownCarparks),
-                                        }
-                                    ]
-                                },
-                                {
-                                    title: "Surface",
-                                    options: [
-                                        {
-                                            label: "Tarmac",
-                                            value: "includeTarmacCarparks",
-                                            isChecked: includeTarmacCarparks,
-                                            toggle: () => setIncludeTarmacCarparks(!includeTarmacCarparks),
-                                        },
-                                        {
-                                            label: "Concrete",
-                                            value: "includeConcreteCarparks",
-                                            isChecked: includeConcreteCarparks,
-                                            toggle: () => setIncludeConcreteCarparks(!includeConcreteCarparks),
-                                        },
-                                        {
-                                            label: "Gravel",
-                                            value: "includeGravelCarparks",
-                                            isChecked: includeGravelCarparks,
-                                            toggle: () => setIncludeGravelCarparks(!includeGravelCarparks),
-                                        }
-                                    ]
-                                }
-                            ]}
-                        />
+                        <div className={styles.drawerContent}>
+                            <LayerControl
+                                label="Car parks"
+                                isVisible={showCarparks}
+                                toggleVisibility={() => setShowCarparks(!showCarparks)}
+                                subOptions={[
+                                    {
+                                        title: "Type",
+                                        options: [
+                                            {
+                                                label: "Long Stay",
+                                                value: "includeLongStayCarparks",
+                                                isChecked: includeLongStayCarparks,
+                                                toggle: () => setIncludeLongStayCarparks(!includeLongStayCarparks),
+                                            },
+                                            {
+                                                label: "Short Stay",
+                                                value: "includeShortStayCarparks",
+                                                isChecked: includeShortStayCarparks,
+                                                toggle: () => setIncludeShortStayCarparks(!includeShortStayCarparks),
+                                            },
+                                            {
+                                                label: "Unknown",
+                                                value: "includeUnknownCarparks",
+                                                isChecked: includeUnknownCarparks,
+                                                toggle: () => setIncludeUnknownCarparks(!includeUnknownCarparks),
+                                            }
+                                        ]
+                                    },
+                                    {
+                                        title: "Surface",
+                                        options: [
+                                            {
+                                                label: "Tarmac",
+                                                value: "includeTarmacCarparks",
+                                                isChecked: includeTarmacCarparks,
+                                                toggle: () => setIncludeTarmacCarparks(!includeTarmacCarparks),
+                                            },
+                                            {
+                                                label: "Concrete",
+                                                value: "includeConcreteCarparks",
+                                                isChecked: includeConcreteCarparks,
+                                                toggle: () => setIncludeConcreteCarparks(!includeConcreteCarparks),
+                                            },
+                                            {
+                                                label: "Gravel",
+                                                value: "includeGravelCarparks",
+                                                isChecked: includeGravelCarparks,
+                                                toggle: () => setIncludeGravelCarparks(!includeGravelCarparks),
+                                            }
+                                        ]
+                                    }
+                                ]}
+                            />
 
-                        <LayerControl
-                            label="Public toilets"
-                            isVisible={showToilets}
-                            toggleVisibility={() => setShowToilets(!showToilets)}
-                            subOptions={[
-                                {
-                                    title: "Facilities",
-                                    options: [
-                                        {
-                                            label: "Gender Neutral",
-                                            value: "includeGenderNeutralToilets",
-                                            isChecked: includeGenderNeutralToilets,
-                                            toggle: () => setIncludeGenderNeutralToilets(!includeGenderNeutralToilets),
-                                        },
-                                        {
-                                            label: "Beach Showers",
-                                            value: "includeBeachShowerToilets",
-                                            isChecked: includeBeachShowerToilets,
-                                            toggle: () => setIncludeBeachShowerToilets(!includeBeachShowerToilets),
-                                        },
-                                        {
-                                            label: "Baby Changing",
-                                            value: "includeBabyChangingToilets",
-                                            isChecked: includeBabyChangingToilets,
-                                            toggle: () => setIncludeBabyChangingToilets(!includeBabyChangingToilets),
-                                        },
-                                        {
-                                            label: "Disabled",
-                                            value: "includeDisabledToilets",
-                                            isChecked: includeDisabledToilets,
-                                            toggle: () => setIncludeDisabledToilets(!includeDisabledToilets),
-                                        },
-                                        {
-                                            label: "None",
-                                            value: "includeNoneToilets",
-                                            isChecked: includeNoneToilets,
-                                            toggle: () => setIncludeNoneToilets(!includeNoneToilets),
-                                        }
-                                    ]
-                                },
-                            ]}
-                        />
+                            <LayerControl
+                                label="Public toilets"
+                                isVisible={showToilets}
+                                toggleVisibility={() => setShowToilets(!showToilets)}
+                                subOptions={[
+                                    {
+                                        title: "Facilities",
+                                        options: [
+                                            {
+                                                label: "Gender Neutral",
+                                                value: "includeGenderNeutralToilets",
+                                                isChecked: includeGenderNeutralToilets,
+                                                toggle: () => setIncludeGenderNeutralToilets(!includeGenderNeutralToilets),
+                                            },
+                                            {
+                                                label: "Beach Showers",
+                                                value: "includeBeachShowerToilets",
+                                                isChecked: includeBeachShowerToilets,
+                                                toggle: () => setIncludeBeachShowerToilets(!includeBeachShowerToilets),
+                                            },
+                                            {
+                                                label: "Baby Changing",
+                                                value: "includeBabyChangingToilets",
+                                                isChecked: includeBabyChangingToilets,
+                                                toggle: () => setIncludeBabyChangingToilets(!includeBabyChangingToilets),
+                                            },
+                                            {
+                                                label: "Disabled",
+                                                value: "includeDisabledToilets",
+                                                isChecked: includeDisabledToilets,
+                                                toggle: () => setIncludeDisabledToilets(!includeDisabledToilets),
+                                            },
+                                            {
+                                                label: "None",
+                                                value: "includeNoneToilets",
+                                                isChecked: includeNoneToilets,
+                                                toggle: () => setIncludeNoneToilets(!includeNoneToilets),
+                                            }
+                                        ]
+                                    },
+                                ]}
+                            />
 
-                        <LayerControl
-                            label="Bus stops"
-                            isVisible={showBusStops}
-                            toggleVisibility={() => setShowBusStops(!showBusStops)}
-                        />
-                        <LayerControl
-                            label="Recycling centres"
-                            isVisible={showRecycling}
-                            toggleVisibility={() => setShowRecycling(!showRecycling)}
-                            subOptions={[
-                                {
-                                    title: "Services",
-                                    options: [
-                                        {
-                                            label: "Mixed Textiles",
-                                            value: "includeMixedTextilesRecycling",
-                                            isChecked: includeMixedTextilesRecycling,
-                                            toggle: () => setIncludedMixedTextilesRecycling(!includeMixedTextilesRecycling),
-                                        },
-                                        {
-                                            label: "Batteries",
-                                            value: "includeBatteriesRecycling",
-                                            isChecked: includeBatteriesRecycling,
-                                            toggle: () => setIncludedBatteriesRecycling(!includeBatteriesRecycling),
-                                        },
-                                        {
-                                            label: "Cardboard",
-                                            value: "includeCardboardRecycling",
-                                            isChecked: includeCardboardRecycling,
-                                            toggle: () => setIncludedCardboardRecycling(!includeCardboardRecycling),
-                                        },
-                                        {
-                                            label: "Metal Packaging",
-                                            value: "includeMetalPackagingRecycling",
-                                            isChecked: includeMetalPackagingRecycling,
-                                            toggle: () => setIncludedMetalPackagingRecycling(!includeMetalPackagingRecycling),
-                                        },
-                                        {
-                                            label: "Drink Cans",
-                                            value: "includeDrinkCansRecycling",
-                                            isChecked: includeDrinkCansRecycling,
-                                            toggle: () => setIncludedDrinkCansRecycling(!includeDrinkCansRecycling),
-                                        },
-                                        {
-                                            label: "Paper",
-                                            value: "includePaperRecycling",
-                                            isChecked: includePaperRecycling,
-                                            toggle: () => setIncludedPaperRecycling(!includePaperRecycling),
-                                        },
-                                        {
-                                            label: "Plastic Bottles",
-                                            value: "includePlasticBottlesRecycling",
-                                            isChecked: includePlasticBottlesRecycling,
-                                            toggle: () => setIncludedPlasticBottlesRecycling(!includePlasticBottlesRecycling),
-                                        },
-                                        {
-                                            label: "Glass",
-                                            value: "includeGlassRecycling",
-                                            isChecked: includeGlassRecycling,
-                                            toggle: () => setIncludedGlassRecycling(!includeGlassRecycling),
-                                        }
-                                    ]
-                                }
-                            ]}
-                        />
-                        <LayerControl
-                            label="Defibrillators"
-                            isVisible={showDefib}
-                            toggleVisibility={() => setShowDefib(!showDefib)}
-                        />
-                        <LayerControl
-                            label="Eat safe ratings"
-                            isVisible={showEatsafe}
-                            toggleVisibility={() => setShowEatsafe(!showEatsafe)}
-                        />
-                        <LayerControl
-                            label="EV chargers"
-                            isVisible={showEvChargers}
-                            toggleVisibility={() => setShowEvChargers(!showEvChargers)}
-                        />
+                            <LayerControl
+                                label="Bus stops"
+                                isVisible={showBusStops}
+                                toggleVisibility={() => setShowBusStops(!showBusStops)}
+                            />
+                            <LayerControl
+                                label="Recycling centres"
+                                isVisible={showRecycling}
+                                toggleVisibility={() => setShowRecycling(!showRecycling)}
+                                subOptions={[
+                                    {
+                                        title: "Services",
+                                        options: [
+                                            {
+                                                label: "Mixed Textiles",
+                                                value: "includeMixedTextilesRecycling",
+                                                isChecked: includeMixedTextilesRecycling,
+                                                toggle: () => setIncludedMixedTextilesRecycling(!includeMixedTextilesRecycling),
+                                            },
+                                            {
+                                                label: "Batteries",
+                                                value: "includeBatteriesRecycling",
+                                                isChecked: includeBatteriesRecycling,
+                                                toggle: () => setIncludedBatteriesRecycling(!includeBatteriesRecycling),
+                                            },
+                                            {
+                                                label: "Cardboard",
+                                                value: "includeCardboardRecycling",
+                                                isChecked: includeCardboardRecycling,
+                                                toggle: () => setIncludedCardboardRecycling(!includeCardboardRecycling),
+                                            },
+                                            {
+                                                label: "Metal Packaging",
+                                                value: "includeMetalPackagingRecycling",
+                                                isChecked: includeMetalPackagingRecycling,
+                                                toggle: () => setIncludedMetalPackagingRecycling(!includeMetalPackagingRecycling),
+                                            },
+                                            {
+                                                label: "Drink Cans",
+                                                value: "includeDrinkCansRecycling",
+                                                isChecked: includeDrinkCansRecycling,
+                                                toggle: () => setIncludedDrinkCansRecycling(!includeDrinkCansRecycling),
+                                            },
+                                            {
+                                                label: "Paper",
+                                                value: "includePaperRecycling",
+                                                isChecked: includePaperRecycling,
+                                                toggle: () => setIncludedPaperRecycling(!includePaperRecycling),
+                                            },
+                                            {
+                                                label: "Plastic Bottles",
+                                                value: "includePlasticBottlesRecycling",
+                                                isChecked: includePlasticBottlesRecycling,
+                                                toggle: () => setIncludedPlasticBottlesRecycling(!includePlasticBottlesRecycling),
+                                            },
+                                            {
+                                                label: "Glass",
+                                                value: "includeGlassRecycling",
+                                                isChecked: includeGlassRecycling,
+                                                toggle: () => setIncludedGlassRecycling(!includeGlassRecycling),
+                                            }
+                                        ]
+                                    }
+                                ]}
+                            />
+                            <LayerControl
+                                label="Defibrillators"
+                                isVisible={showDefib}
+                                toggleVisibility={() => setShowDefib(!showDefib)}
+                            />
+                            <LayerControl
+                                label="Eat safe ratings"
+                                isVisible={showEatsafe}
+                                toggleVisibility={() => setShowEatsafe(!showEatsafe)}
+                            />
+                            <LayerControl
+                                label="EV chargers"
+                                isVisible={showEvChargers}
+                                toggleVisibility={() => setShowEvChargers(!showEvChargers)}
+                            />
+                        </div>
+
+                        <div className={styles.attribution}>
+                            For sources & attribution, please <a href="/map/attribution">click here</a>.
+                        </div>
                     </div>
 
                     <ReactMapGL

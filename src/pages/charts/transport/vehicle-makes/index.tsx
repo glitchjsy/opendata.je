@@ -12,6 +12,7 @@ import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Lege
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
 import Input from "@site/src/components/ui/Input";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     data: any;
@@ -66,6 +67,12 @@ export default function VehicleMakeCharts() {
                     </TabItem>
                 </Tabs>
             </div>
+
+            <Attribution
+                link="/docs/endpoints/vehicles/makes#sources--attribution"
+                ogl
+                style={{ marginTop: "30px" }}
+            />
         </ChartsPageLayout>
     )
 }
@@ -123,7 +130,7 @@ function BarChartDisplay(props: ChartDisplayProps) {
                         },
                         maintainAspectRatio: false,
                         plugins: {
-                             datalabels: {
+                            datalabels: {
                                 anchor: "end",
                                 align: "top",
                                 color: "black",

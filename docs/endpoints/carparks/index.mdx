@@ -120,13 +120,15 @@ Here is an example of using the data to display all carparks on a map. Click on 
 
 <ExampleMap item={mapItems.carpark} />
 
-### Sources
+### Sources & Attribution
 |Data|Source|
 |----|------|
-|Name, Surface Type, Spaces, Disabled Spaces, Electric Charging Spaces, Parent/Child Spaces|[This Freedom of Information request][carparkfoi]|
-|PayByPhone Code, Is Multi Storey|[Car parks (long and short stay) on gov.je][pbf]|
-|Latitude, Longitude|[Locations of Public Facilities on opendata.gov.je][carparkopendata]|
-|Live Tracking Code|[The `code` property from this endpoint][livespacesapi]|
+|`name`, `surfaceType`, `spaces`, `disabledSpaces`, `electricChargingSpaces`, `parentChildSpaces`|[This FOI request on gov.je][carparkfoi]|
+|`payByPhoneCode`, `multiStorey`|[Car parks (long and short stay) on gov.je][pbf]|
+|`latitude`, `longitude`|[Locations of Public Facilities on opendata.gov.je][carparkopendata]|
+|`liveTrackingCode`|[The `code` property from this endpoint][livespacesapi]|
+
+The data that were accessed from `opendata.gov.je` is licensed under the [Open Government License - Jersey (OGL-J) v1.0](https://www.gov.je/ServiceManual/opendata/Pages/open-government-licence-jersey-ogl-j-v1-0.aspx)
 
 [carparkspaces]: https://www.gov.je/Travel/Motoring/Parking/pages/carparkspaces.aspx
 [carparkfoi]: https://www.gov.je/government/freedomofinformation/pages/foi.aspx?ReportID=7465

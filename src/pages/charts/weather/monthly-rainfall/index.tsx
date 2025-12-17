@@ -9,6 +9,7 @@ import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
 import { useColorMode } from "@docusaurus/theme-common";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     data: any;
@@ -54,6 +55,12 @@ export default function DrivingTestResultCharts() {
             <div className={styles.pageWidth}>
                 <LineChartDisplay data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
             </div>
+
+            <Attribution
+                link="/docs/endpoints/charts/monthly-rainfall#sources--attribution"
+                ogl
+                style={{ marginTop: "30px" }}
+            />
         </ChartsPageLayout>
     )
 }

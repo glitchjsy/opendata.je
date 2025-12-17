@@ -66,10 +66,11 @@ Here is an example of using the data to display all establishments that have an 
 
 <ExampleMap item={mapItems.eatsafe} />
 
-### Sources
-|Source|
-|------|
-|[Open data endpoint][eatsafe-govje-endpoint]|
+### Sources & Attribution
+|Data|Source|
+|----|------|
+|`name`,`rating`,`createdAt`,`address1`,<br/>`address2`,`address3`,`postCode`|[This endpoint run by the Government of Jersey][eatsafe-govje-endpoint]|
+|`latitude`,`longitude`|Obtained by looking up the address with the Mapbox API|
 
 [eatsafe-govje-endpoint]: https://sojopendata.azurewebsites.net/eatsafe/json
 [eatsafe-govje]: https://www.gov.je/Industry/RetailHospitality/FoodDrink/pages/eatsaferatings.aspx

@@ -9,6 +9,7 @@ import { Bar, Pie } from "react-chartjs-2";
 import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Legend, ArcElement } from "chart.js";
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     data: any;
@@ -80,6 +81,12 @@ export default function VehicleColourCharts() {
                 <BarChartDisplay data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
                 {/* <PieChartDisplay data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} /> */}
             </div>
+
+            <Attribution
+                link="/docs/endpoints/vehicles/colors#sources--attribution"
+                ogl
+                style={{ marginTop: "30px" }}
+            />
         </ChartsPageLayout>
     )
 }
@@ -126,7 +133,7 @@ function BarChartDisplay(props: ChartDisplayProps) {
                         },
                         maintainAspectRatio: false,
                         plugins: {
-                             datalabels: {
+                            datalabels: {
                                 anchor: "end",
                                 align: "top",
                                 color: "black",

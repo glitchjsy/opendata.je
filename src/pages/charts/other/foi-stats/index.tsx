@@ -10,6 +10,7 @@ import { Chart as ChartJS, BarElement, CategoryScale, LinearScale, Tooltip, Titl
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
 import Stat from "@site/src/components/ui/Stat";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     data: any;
@@ -109,11 +110,11 @@ function TotalPerYearChart(props: ChartDisplayProps) {
                             y: { beginAtZero: true }
                         },
                         plugins: {
-                             title: {
+                            title: {
                                 display: true,
                                 text: "Total FOI Requests Published Per Year"
                             },
-                             datalabels: {
+                            datalabels: {
                                 anchor: "end",
                                 align: "top",
                                 color: "black",

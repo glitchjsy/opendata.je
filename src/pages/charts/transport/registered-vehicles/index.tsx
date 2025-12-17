@@ -8,6 +8,7 @@ import { Line } from "react-chartjs-2";
 import { Chart as ChartJS, CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend } from "chart.js";
 import config from "../../../../../config.json";
 import styles from "./styles.module.css";
+import { Attribution } from "@site/src/components/Attribution";
 
 interface ChartDisplayProps {
     data: any;
@@ -59,6 +60,12 @@ export default function RegisteredVehiclesCharts() {
             <div className={styles.pageWidth}>
                 <LineChartDisplay data={data} state={state} setState={setState} loaded={loaded} onRetry={loadData} />
             </div>
+
+            <Attribution
+                link="/docs/endpoints/charts/registered-vehicles#sources--attribution"
+                ogl
+                style={{ marginTop: "30px" }}
+            />
         </ChartsPageLayout>
     )
 }
