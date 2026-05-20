@@ -31,13 +31,4 @@ If you'd like to contribute to the codebase, please see the following GitHub rep
 * [Data API](https://github.com/glitchjsy/data-api) - Public API to access open data
 * [Data Frontend](https://github.com/glitchjsy/data-frontend) - A docusaurus site that hosts API documentation for the Data API
 * [Data Fetcher](https://github.com/glitchjsy/data-fetcher) - A program to periodically fetch data such as available carpark spaces
-
-If you'd like to get in touch about anything else (questions, suggestions, etc), email [luke@glitch.je](mailto:luke@glitch.je?subject=Glitch.je%20Open%20Data).  
   
-<br/>
-
-## Sponsors & Donations
-If you'd like to donate to sponsor the project to help cover hosting costs and my development time, you can do so with the following links:
-
-* [GitHub Sponsors (monthly)](https://github.com/sponsors/lukeeey)
-* [Buy Me a Coffee (one-time)](https://buymeacoffee.com/lukeeey)
